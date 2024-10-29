@@ -1,0 +1,288 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://fonts-3by.pages.dev/karla-v31-latin/karla-v31-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Karla';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts-3by.pages.dev/karla-v31-latin/karla-v31-latin-700.woff2') format('woff2');
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Cyan: hsl(179, 62%, 43%);
+  --Light-Cyan: hsl(178, 47%, 53%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Bright-green: hsl(86, 65%, 54%);
+
+  /* ### Neutral */
+
+  --Light-Gray: hsl(204, 43%, 93%);
+  --white: hsl(0, 0%, 100%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+
+  /* Font sizes  */
+  --fs-400: 1.75rem;     /* 28px */
+  --fs-300: 1.5rem;     /* 24px */
+  --fs-200: 1.25rem;     /* 20px */
+  --fs-100: 1rem;     /* 16px */
+
+  /* Spacing  */
+  --mar-pad-gap-1000: 6.25rem;     /* 100px */
+  --mar-pad-gap-900: 5.625rem;     /* 90px */
+  --mar-pad-gap-800: 5rem;         /* 80px */
+  --mar-pad-gap-700: 4.375rem;     /* 70px */
+  --mar-pad-gap-600: 3.75rem;      /* 60px */
+  --mar-pad-gap-500: 3.125rem;     /* 50px */
+  --mar-pad-gap-400: 2.5rem;       /* 40px */
+  --mar-pad-gap-300: 1.875rem;     /* 30px */
+  --mar-pad-gap-200: 1.25rem;      /* 20px */
+  --mar-pad-gap-100: 0.625rem;     /* 10px */  
+
+
+}
+
+ body {
+  font-family: 'Karla';
+  /* height: 100%; */
+  display:grid;
+  place-items: center;
+  background-color: var(--Light-Gray);
+}
+
+a{
+  color: var(--Light-Gray);
+  text-decoration: none;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  overflow: hidden;
+  padding-block: var(--mar-pad-gap-500);
+  padding-inline: var(--mar-pad-gap-200);
+}
+
+.main-content{
+  display: grid;
+  width: 350px;
+  /* border: 2px solid black; */
+  grid-template-rows: repeat(3, 1fr);
+  margin-inline: var(--mar-pad-gap-200);
+}
+
+.section{
+  padding: var(--mar-pad-gap-200);
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: var(--mar-pad-gap-100);
+  /* border: 2px solid black; */
+  font-size: var(--fs-100);
+  color: var(--Light-Gray);
+}
+
+.section[data-color="white"]{
+  background-color: var(--white);
+}
+
+.section[data-color="cyan"]{
+  background-color: var(--Cyan);
+}
+
+.section[data-color="light-cyan"]{
+  background-color: var(--Light-Cyan);
+}
+
+
+.section .sec1-title{
+  color: var(--Cyan);
+  font-size: var(--fs-300);
+  font-weight: 700;
+}
+
+.section .sec1-sub-title{
+  color: var(--Bright-Yellow);
+
+  font-weight: 700;
+}
+
+.section .sec1-description{
+  color: var(--Grayish-Blue);
+  line-height: 1.5;
+}
+ /* 2nd section  */
+
+ .section .sec2-title{
+  color: var(--Light-Gray);
+  /* background-color: var(--Cyan); */
+  font-size: var(--fs-200);
+ }
+
+ .section .sec2-price{
+  color: var(--Light-Gray);
+ }
+
+ .section .sec2-price span{
+  --spacing : 0.313rem   /* 5px */
+
+
+  color: var(--Light-Gray);
+  font-size: var(--fs-400);
+  font-weight: 700;
+  margin-right: var(--margin);
+ }
+
+ .section .sec2-description{
+  color: var(--Light-Gray);
+ }
+
+ .section .btn{
+  --spacing-200: 0.938rem;  /* 15px */
+  --spacing-100: 0.438rem ; /* 7px */
+
+
+  width: 100%;
+  font-weight: 700;
+  background-color: var(--Bright-green);
+  place-self: center;
+  text-align: center;
+  padding-block: var(--spacing-200);
+  border-radius: var(--spacing-100);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.125) ;
+  transition: background-color .3s ease-in,
+              color .3s ease;
+ }
+
+ .section .btn:hover,
+          .btn:focus{
+  background-color: var(--Bright-Yellow);
+  color: black;
+ }
+
+ .section .sec3-title{
+  font-size: var(--fs-200);
+ }
+
+
+ @media (min-width: 37.5rem) {
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+    padding-block: var(--mar-pad-gap-1000);
+    padding-inline: var(--mar-pad-gap-400);
+  }
+  
+  .main-content{
+    min-width: 37.5rem;  /* 600px */
+    width:43.75rem;   /* 700px*/
+  
+    /* height: 80%; */
+    display: grid;
+    /* border: 2px solid black; */
+    grid-template-rows: 16.875rem  18.75rem;    /* 270rem */  /* 300px */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section{
+    padding:var(--mar-pad-gap-400);
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: var(--mar-pad-gap-100);
+    /* border: 2px solid black; */
+    font-size: var(--fs-100);
+    color: var(--Light-Gray);
+  }
+
+  .section[data-color="white"]{
+    background-color: var(--white);
+    grid-column: 1 / -1;
+  }
+  .section .sec1-description{
+    color: var(--Grayish-Blue);
+    line-height: 2;
+  }
+  
+ }
